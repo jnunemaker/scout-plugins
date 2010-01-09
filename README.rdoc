@@ -1,0 +1,3 @@
+Where I shall eventually keep all my scout plugins as I create them. 
+
+For now, just a campaign monitor list tracking one. Saves me one more place to login.
