@@ -1,4 +1,4 @@
-class MongoDBServerStatusPlugin < Scout::Plugin
+class MongoDBOps < Scout::Plugin
   OPTIONS=<<-EOS
     path_to_db_yml:
       label: Path to database.yml
