@@ -14,9 +14,7 @@ class MongoDBServerStatusPlugin < Scout::Plugin
     config     = YAML::load_file(option('path_to_db_yml'))[option('rails_env')]
     connection = Mongo::Connection.new(config['host'], config['port'])
     db         = connection.db(config['database'])
-    unless config['username'].nil?
-      db.authenticate(config['username'], config['password'])
-    end
+    db.authenticate(config['username'], config['password']) unless config['username'].nil?
     stats      = db.command('serverStatus' => 1)
 
     op_inserts   = stats['opcounters']['insert']
