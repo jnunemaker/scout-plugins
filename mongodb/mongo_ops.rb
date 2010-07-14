@@ -31,12 +31,12 @@ class MongoOpsPlugin < Scout::Plugin
     previous_get_mores = memory(:op_get_mores) || 0
     previous_commands  = memory(:op_commands)  || 0
 
-    report(:inserts   => op_inserts   - previous_inserts)
-    report(:queries   => op_queries   - previous_queries)
-    report(:updates   => op_updates   - previous_updates)
-    report(:deletes   => op_deletes   - previous_deletes)
-    report(:get_mores => op_get_mores - previous_get_mores)
-    report(:commands  => op_commands  - previous_commands)
+    report(:op_inserts   => op_inserts   - previous_inserts)
+    report(:op_queries   => op_queries   - previous_queries)
+    report(:op_updates   => op_updates   - previous_updates)
+    report(:op_deletes   => op_deletes   - previous_deletes)
+    report(:op_get_mores => op_get_mores - previous_get_mores)
+    report(:op_commands  => op_commands  - previous_commands)
 
     report(:total_inserts   => op_inserts)
     report(:total_queries   => op_queries)
