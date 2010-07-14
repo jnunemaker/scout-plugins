@@ -2,7 +2,6 @@ class MongoStatsPlugin < Scout::Plugin
   OPTIONS=<<-EOS
     path_to_db_yml:
       label: Path to database.yml
-      notes: For example: /path/to/myapp/current/config/database.yml
     rails_env:
       label: Rails Environment
       default: production
