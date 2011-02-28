@@ -17,6 +17,8 @@ class MongoServerStatusPlugin < Scout::Plugin
 
     stats = db.command('serverStatus' => 1)
 
+    report(:current_connections           => stats['connections']['current'])
+    report(:available_connections         => stats['connections']['available'])
     report(:btree_accesses                => stats['indexCounters']['btree']['accesses'])
     report(:btree_hits                    => stats['indexCounters']['btree']['hits'])
     report(:btree_misses                  => stats['indexCounters']['btree']['misses'])
