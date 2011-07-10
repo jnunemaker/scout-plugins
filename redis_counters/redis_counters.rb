@@ -34,7 +34,6 @@ class RedisCounters < Scout::Plugin
       keys.each do |key|
         begin
           value = redis.get(key).to_i
-          puts value.inspect
           counter(key.to_sym, value, :per => :second)
         rescue Errno::ECONNREFUSED => error
           return error( "Could not connect to Redis.",
